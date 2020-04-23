@@ -1,0 +1,79 @@
+* { font-family: 'Roboto Mono', monospace; }
+
+body { 
+    margin:0 auto;
+    background-color:#0C0C14; 
+    color:#5F7F7E;
+    font-size:1em; 
+    user-select: none; }
+
+footer { 
+    background-color:#184B34;
+    padding:5px; 
+    position:absolute;
+    width:100%; }
+
+a { color:#0C0C14; }
+
+h1 { font-size:3em; }
+
+h3 { font-size:1.5em; }
+
+/* Hero Image */
+#hero-image {
+    height:50%;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('coronavirus.jpg');
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    position:relative; }
+
+#hero-image-text {
+    text-align:center;
+    position:absolute;
+    top:50%; 
+    left:50%;
+    transform: translate(-50%, -50%);
+    color:white; }
+
+/* Content */
+#content-flex-cntnr { 
+    display:flex; 
+    margin:10px; }
+
+.flex-item {
+    flex:1 1 33%; 
+    padding:5px; 
+    margin:5px;
+    background-color:#191919; }
+
+.content-header { text-align:center; height:60px; }
+
+/* Radio Buttons */
+input[type='radio'] { display:none; }
+
+label { 
+    border:2px solid #184B34;
+    color:#184B34;
+    padding:10px;
+    margin:auto; }
+
+label:hover { color:#5F7F7E; }
+
+.checked { background-color:#184B34; color: #5F7F7E; }
+
+.sub-flex-item { flex:1 1 20%; text-align:center; }
+
+#buttons-flex { display:flex; margin:25px 0; }
+
+/* Calendar */
+table { text-align:center; }
+
+thead { background-color:#184B34; color: #5F7F7E; }
+
+th { padding:5px; width:50px; }
+
+@media (max-width:900px)
+{
+    #content-flex-cntnr, .sub-flex-item { flex-direction:column; }
+}

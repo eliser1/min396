@@ -7,54 +7,160 @@
     </head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        function checkButton()
+        function checkButton(val)
         {
-            if($('#radio-jan').prop('checked') == true)
+            if(val == 'jan')
             {
-                $('label').removeClass(' checked');
+                $('td').removeClass(' checked');
                 $('#radio-jan-label').addClass(' checked');
+                $('#jan-cal').css('display', 'table-row-group');
+                $('#feb-cal').css('display', 'none');
+                $('#mar-cal').css('display', 'none');
+                $('#apr-cal').css('display', 'none');
+                $('#jan-total-diff').css('display', 'block');
+                $('#feb-total-diff').css('display', 'none');
+                $('#mar-total-diff').css('display', 'none');
+                $('#apr-total-diff').css('display', 'none');
             }
-            else if($('#radio-feb').prop('checked') == true)
+            else if(val == 'feb')
             {
-                $('label').removeClass(' checked');
+                $('td').removeClass(' checked');
                 $('#radio-feb-label').addClass(' checked');
+                $('#jan-cal').css('display', 'none');
+                $('#feb-cal').css('display', 'table-row-group');
+                $('#mar-cal').css('display', 'none');
+                $('#apr-cal').css('display', 'none');
+                $('#jan-total-diff').css('display', 'none');
+                $('#feb-total-diff').css('display', 'block');
+                $('#mar-total-diff').css('display', 'none');
+                $('#apr-total-diff').css('display', 'none');
             }
-            else if($('#radio-mar').prop('checked') == true)
+            else if(val == 'mar')
             {
-                $('label').removeClass(' checked');
+                $('td').removeClass(' checked');
                 $('#radio-mar-label').addClass(' checked');
+                $('#jan-cal').css('display', 'none');
+                $('#feb-cal').css('display', 'none');
+                $('#mar-cal').css('display', 'table-row-group');
+                $('#apr-cal').css('display', 'none');
+                $('#jan-total-diff').css('display', 'none');
+                $('#feb-total-diff').css('display', 'none');
+                $('#mar-total-diff').css('display', 'block');
+                $('#apr-total-diff').css('display', 'none');
             }
-            else if($('#radio-apr').prop('checked') == true)
+            else if(val == 'apr')
             {
-                $('label').removeClass(' checked');
+                $('td').removeClass(' checked');
                 $('#radio-apr-label').addClass(' checked');
+                $('#jan-cal').css('display', 'none');
+                $('#feb-cal').css('display', 'none');
+                $('#mar-cal').css('display', 'none');
+                $('#apr-cal').css('display', 'table-row-group');
+                $('#jan-total-diff').css('display', 'none');
+                $('#feb-total-diff').css('display', 'none');
+                $('#mar-total-diff').css('display', 'none');
+                $('#apr-total-diff').css('display', 'block');
             }
         }
+
+        $(document).ready(function()
+        {
+            $('#public-speaking-plus, #public-speaking-minus').click(function()
+            {
+                $('#public-speaking, #public-speaking-minus, #public-speaking-plus').toggle();
+            });
+            $('#collab-plus, #collab-minus').click(function()
+            {
+                $('#collab, #collab-minus, #collab-plus').toggle();
+            });
+            $('#time-mgmt-plus, #time-mgmt-minus').click(function()
+            {
+                $('#time-mgmt, #time-mgmt-minus, #time-mgmt-plus').toggle();
+            });
+        });
     </script>
     <body>
         <div id='hero-image'>
             <div id='hero-image-text'>
                 <h1>Final Reflection</h1>
-                <h3>The impact of COVID-19 on the dry ice industry</h3>
+                <h3>The Impact of COVID-19 on my Internship at Cold Jet</h3>
             </div>
         </div>
         <div id='content-flex-cntnr'>
             <div class='flex-item'>
                 <h3 class='content-header'>Cold Jet and COVID-19</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>COVID-19 has impacted many aspects of life at Cold Jet. These changes include:</p>
+                <ul>
+                    <li>As many people as possible are working from home</li>
+                    <li>Paper processes have been modified to make them more electronic - for example, Purchase order acknowledgement and order/job entry</li>
+                    <li>Those working in the office have been instructed to maintain a 6 ft social distance from all of their co-workers</li>
+                    <li>Everyone has been instructed to wash their hands frequently</li>
+                    <li>Lunches are provided every day for those required to work at the office to compensate them for having to work from the office</li>
+                    <li>A cleaning company has been hired to come in and disinfect surfaces on a more frequent basis</li>
+                    <li>A cleaning company has been hired to come in every other weekend and spray all surfaces and equipment with a chemical fog</li>
+                    <li>Business travel has been cancelled or postponed</li>
+                    <li>New hiring has been postponed</li>
+                    <li>We have gotten a Paycheck Protection Plan loan made available through the CARES act</li>
+                    <li>Communication is more virtual and we are depending on our virtual communication systems and VPN a lot more</li>
+                    <li>Sales have fallen</li>
+                </ul>
             </div>
             <div class='flex-item'>
                 <h3 class='content-header'>Working From Home Admidst COVID-19</h3>
-                <p>Lorem ipsum dolor est</p>
+                <p>On March 13<superscript>th</superscript>, I and many other workers at Cold Jet received an email explaining that we would be spending the next week, March 16<superscript>th</superscript> - March 20<superscript>th</superscript>, working from home. We would return to work the following week unless otherwise noted. Since that original email, we have continued to work from home until further notice, which means nearly two months of my internship experience at Cold Jet has been spent working from home.</p>
+                <p>Working at Cold Jet has been my first real world experience in web development. It was already something that I was unfamiliar with, and I am actively learning new things everyday. Due to working from home, it has been far more difficult to learn. Instead of being in the office together, my boss and I have to communicate online. There are times when our online messenger does not notify us about messages, and there will be long periods of time before a response is received at times due to this.</p>
+                <p>This strange experience has, however, taught me some very valuable skills and given me an experience that not many other interns would have. I feel as though this has taught me a lot regarding my learning goals for this job, in a way that I would not have known otherwise. Click on my learning goals below to learn more about the impact COVID-19 had on each one.</p>
+                <div id='learning-goals'>
+                    <div id='public-speaking-plus'><h4>+ Improve Public Speaking</h4></div>
+                    <div id='public-speaking-minus' style='display:none;'><h4>- Improve Public Speaking</h4></div>
+                    <div id='public-speaking' style='display:none;'>
+                        <p>While I have not been speaking in group settings due to COVID-19, I feel as though my public speaking skills have benefited. Having to exclusively communicate online meant that I had to learn to properly express my thoughts over an email. Increased communication with my boss online helped me to learn how to better express things that I was thinking, and I believe that that will translate into the real world. It has been extremely helpful to figure out what words work and what don't through trial and error online.</p>
+                    </div>
+                    <div id='collab-plus'><h4>+ Collaboration</h4></div>
+                    <div id='collab-minus' style='display:none;'><h4>- Collaboration</h4></div>
+                    <div id='collab' style='display:none;'>
+                        <p>Our collaborations have been challenging, given the entirely online method of communication we are dealing with. This did, however, give me a new perspective on things, as it is a completely different method of collaboration that we would not have had to go through otherwise. Being flexible and able to effectively work with your team under any circumstances is crucial, and this experience really brought that ability out and taught me a lot about remote collaboration.</p>
+                    </div>
+                    <div id='time-mgmt-plus'><h4>+ Time Management</h4></div>
+                    <div id='time-mgmt-minus' style='display:none;'><h4>- Time Management</h4></div>
+                    <div id='time-mgmt' style='display:none;'>
+                        <p>Working from home has given me ample knowledge about time management by tempting me with many distractions. Although there were many things that I could have done other than work in the comfort of my own home, I was able to phase out distractions and manage my time on projects effectively. I would finish things in a timely manner, and still have time left in my work day to pick up other projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id='main-cal-cntnr'>
+            <div class='flex-item'>
+                <h3 class='content-header'>Tracking COVID-19 in the US</h3>
+                <p>Many new websites and graphics are being made to express the seriousness of COVID-19. Developers and designers are coming up with more and more ways to display the same information, in an attempt to spread the word in an attractive manor.</p>
+                <p><a style='color:#184B34' href='https://www.worldometers.info/coronavirus/?utm_campaign=homeAdUOA?Si'>Worldometers</a> uses multiples charts and graphs to display relevant information regarding COVID-19. The user is greeted with an overview of the number of cases, deaths, and recoveries, followed by more data and several charts to display the spread of the virus. The user is then able to see a more thorough breakdown, including cases, deaths, and recoveries by country.</p>
+                <p><a style='color:#184B34' href='https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/cases-in-us.html'>The CDC</a> is utilizing several different interactive options to show the severity of COVID-19 in the United States. First, the information is displayed very basically, featuring the number of cases, deaths, and jurisdictions. Following that is an interactive map of the United States, color coded to show the severity between states and territories. There are multiple other charts and graphs on the page, depicting similar information.</p> 
+                <p id='table-desc'>I have created my own take on this information as well. I gathered information from the CDC and created a calendar, showing the total number of cases in the United States day by day, as well as a total increase for the month shown below the calendar. You may view different month's data by clicking on the corresponding button.</p>
+                <p id='table-desc-sm'>I have created my own take on this information as well. I gathered information from the CDC to create a simple graph, showing the total number of cases in the United States week by week.</p>
             </div>
             <div class='flex-item'>
-                <h3 class='content-header'>Tracking COVID-19 Across the Globe</h3>
-                <p>Lorem ipsum dolor est</p>
-                <p>Place a graph here with buttons below to allow user to pick what time period they want to view US cases of COVID for</p>
-                <p>January, February, March, April</p>
-                <p>Will need to use JS to activate and change bg img</p>
                 <div id='cal-cntnr'>
                     <center>
+                        <table id='buttons' style='margin-bottom:10px;'>
+                            <tr>
+                                <td class='buttons-td checked' id='radio-jan-label'>
+                                    <input type='radio' name='month-of-cases' value='jan' id='radio-jan' checked>
+                                    <label for='radio-jan' onClick='checkButton("jan")'>&nbsp;&nbsp;&nbsp;&nbsp;Jan&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                </td>
+                                <td class='buttons-td' id='radio-feb-label'>
+                                    <input type='radio' name='month-of-cases' value='feb' id='radio-feb'>
+                                    <label for='radio-feb' onClick='checkButton("feb")'>&nbsp;&nbsp;&nbsp;&nbsp;Feb&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                </td>
+                                <td class='buttons-td' id='radio-mar-label'>
+                                    <input type='radio' name='month-of-cases' value='mar' id='radio-mar'>
+                                    <label for='radio-mar' onClick='checkButton("mar")'>&nbsp;&nbsp;&nbsp;&nbsp;Mar&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                </td>
+                                <td class='buttons-td' id='radio-apr-label'>
+                                    <input type='radio' name='month-of-cases' value='apr' id='radio-apr'>
+                                <label for='radio-apr' onClick='checkButton("apr")'>&nbsp;&nbsp;&nbsp;&nbsp;Apr&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                </td>
+                            </tr>
+                            </table>
                         <table id='calendar'>
                             <thead>
                                 <tr style='background-color:#184B34;'>
@@ -69,86 +175,505 @@
                             </thead>
                             <tbody id='jan-cal'>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>1
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>2
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>3
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>4
+                                        <p class='case-numbers'>--</p>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>--</td>
-                                    <td>--</td>
-                                    <td>--</td>
-                                    <td>--</td>
+                                    <td>5
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>6
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>7
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>8
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>9
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>10
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>11
+                                        <p class='case-numbers'>--</p>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                    <td>8</td>
-                                    <td>9</td>
-                                    <td>10</td>
-                                    <td>11</td>
+                                    <td>12
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>13
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>14
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>15
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>16
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>17
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>18
+                                        <p class='case-numbers'>--</p>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>12</td>
-                                    <td>13</td>
-                                    <td>14</td>
-                                    <td>15</td>
-                                    <td>16</td>
-                                    <td>17</td>
-                                    <td>18</td>
+                                    <td>19
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>20
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>21
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>22
+                                        <p class='case-numbers'>2</p>
+                                    </td>
+                                    <td>23
+                                        <p class='case-numbers'>2</p>
+                                    </td>
+                                    <td>24
+                                        <p class='case-numbers'>2</p>
+                                    </td>
+                                    <td>25
+                                        <p class='case-numbers'>5</p>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>19</td>
-                                    <td>20</td>
-                                    <td>21</td>
-                                    <td>22</td>
-                                    <td>23</td>
-                                    <td>24</td>
-                                    <td>25</td>
+                                    <td>26
+                                        <p class='case-numbers'>5</p>
+                                    </td>
+                                    <td>27
+                                        <p class='case-numbers'>5</p>
+                                    </td>
+                                    <td>28
+                                        <p class='case-numbers'>5</p>
+                                    </td>
+                                    <td>29
+                                        <p class='case-numbers'>5</p>
+                                    </td>
+                                    <td>30
+                                        <p class='case-numbers'>5</p>
+                                    </td>
+                                    <td>31
+                                        <p class='case-numbers'>7</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody id='feb-cal' style='display:none;'>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>1
+                                        <p class='case-numbers'>8</p>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>26</td>
-                                    <td>27</td>
-                                    <td>28</td>
-                                    <td>29</td>
-                                    <td>30</td>
-                                    <td>31</td>
+                                    <td>2
+                                        <p class='case-numbers'>8</p>
+                                    </td>
+                                    <td>3
+                                        <p class='case-numbers'>11</p>
+                                    </td>
+                                    <td>4
+                                        <p class='case-numbers'>11</p>
+                                    </td>
+                                    <td>5
+                                        <p class='case-numbers'>11</p>
+                                    </td>
+                                    <td>6
+                                        <p class='case-numbers'>11</p>
+                                    </td>
+                                    <td>7
+                                        <p class='case-numbers'>11</p>
+                                    </td>
+                                    <td>8
+                                        <p class='case-numbers'>11</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9
+                                        <p class='case-numbers'>11</p>
+                                    </td>
+                                    <td>10
+                                        <p class='case-numbers'>11</p>
+                                    </td>
+                                    <td>11
+                                        <p class='case-numbers'>12</p>
+                                    </td>
+                                    <td>12
+                                        <p class='case-numbers'>12</p>
+                                    </td>
+                                    <td>13
+                                        <p class='case-numbers'>13</p>
+                                    </td>
+                                    <td>14
+                                        <p class='case-numbers'>13</p>
+                                    </td>
+                                    <td>15
+                                        <p class='case-numbers'>13</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>16
+                                        <p class='case-numbers'>13</p>
+                                    </td>
+                                    <td>17
+                                        <p class='case-numbers'>13</p>
+                                    </td>
+                                    <td>18
+                                        <p class='case-numbers'>13</p>
+                                    </td>
+                                    <td>19
+                                        <p class='case-numbers'>13</p>
+                                    </td>
+                                    <td>20
+                                        <p class='case-numbers'>13</p>
+                                    </td>
+                                    <td>21
+                                        <p class='case-numbers'>15</p>
+                                    </td>
+                                    <td>22
+                                        <p class='case-numbers'>15</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>23
+                                        <p class='case-numbers'>15</p>
+                                    </td>
+                                    <td>24
+                                        <p class='case-numbers'>15</p>
+                                    </td>
+                                    <td>25
+                                        <p class='case-numbers'>15</p>
+                                    </td>
+                                    <td>26
+                                        <p class='case-numbers'>15</p>
+                                    </td>
+                                    <td>27
+                                        <p class='case-numbers'>16</p>
+                                    </td>
+                                    <td>28
+                                        <p class='case-numbers'>16</p>
+                                    </td>
+                                    <td>29
+                                        <p class='case-numbers'>24</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody id='mar-cal' style='display:none;'>
+                                <tr>
+                                    <td>1
+                                        <p class='case-numbers'>30</p>
+                                    </td>
+                                    <td>2
+                                        <p class='case-numbers'>53</p>
+                                    </td>
+                                    <td>3
+                                        <p class='case-numbers'>78</p>
+                                    </td>
+                                    <td>4
+                                        <p class='case-numbers'>98</p>
+                                    </td>
+                                    <td>5
+                                        <p class='case-numbers'>164</p>
+                                    </td>
+                                    <td>6
+                                        <p class='case-numbers'>211</p>
+                                    </td>
+                                    <td>7
+                                        <p class='case-numbers'>275</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>8
+                                        <p class='case-numbers'>422</p>
+                                    </td>
+                                    <td>9
+                                        <p class='case-numbers'>647</p>
+                                    </td>
+                                    <td>10
+                                        <p class='case-numbers'>937</p>
+                                    </td>
+                                    <td>11
+                                        <p class='case-numbers'>1215</p>
+                                    </td>
+                                    <td>12
+                                        <p class='case-numbers'>1629</p>
+                                    </td>
+                                    <td>13
+                                        <p class='case-numbers'>1896</p>
+                                    </td>
+                                    <td>14
+                                        <p class='case-numbers'>2234</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>15
+                                        <p class='case-numbers'>3471</p>
+                                    </td>
+                                    <td>16
+                                        <p class='case-numbers'>4226</p>
+                                    </td>
+                                    <td>17
+                                        <p class='case-numbers'>7023</p>
+                                    </td>
+                                    <td>18
+                                        <p class='case-numbers'>10442</p>
+                                    </td>
+                                    <td>19
+                                        <p class='case-numbers'>15219</p>
+                                    </td>
+                                    <td>20
+                                        <p class='case-numbers'>18747</p>
+                                    </td>
+                                    <td>21
+                                        <p class='case-numbers'>24583</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>22
+                                        <p class='case-numbers'>33404</p>
+                                    </td>
+                                    <td>23
+                                        <p class='case-numbers'>44338</p>
+                                    </td>
+                                    <td>24
+                                        <p class='case-numbers'>54453</p>
+                                    </td>
+                                    <td>25
+                                        <p class='case-numbers'>68440</p>
+                                    </td>
+                                    <td>26
+                                        <p class='case-numbers'>85356</p>
+                                    </td>
+                                    <td>27
+                                        <p class='case-numbers'>103321</p>
+                                    </td>
+                                    <td>28
+                                        <p class='case-numbers'>122653</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>29
+                                        <p class='case-numbers'>140904</p>
+                                    </td>
+                                    <td>30
+                                        <p class='case-numbers'>163539</p>
+                                    </td>
+                                    <td>31
+                                        <p class='case-numbers'>186101</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody id='apr-cal' style='display:none;'>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>1
+                                        <p class='case-numbers'>213144</p>
+                                    </td>
+                                    <td>2
+                                        <p class='case-numbers'>239279</p>
+                                    </td>
+                                    <td>3
+                                        <p class='case-numbers'>258098</p>
+                                    </td>
+                                    <td>4
+                                        <p class='case-numbers'>267436</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5
+                                        <p class='case-numbers'>330891</p>
+                                    </td>
+                                    <td>6
+                                        <p class='case-numbers'>374329</p>
+                                    </td>
+                                    <td>7
+                                        <p class='case-numbers'>395926</p>
+                                    </td>
+                                    <td>8
+                                        <p class='case-numbers'>427460</p>
+                                    </td>
+                                    <td>9
+                                        <p class='case-numbers'>459165</p>
+                                    </td>
+                                    <td>10
+                                        <p class='case-numbers'>492416</p>
+                                    </td>
+                                    <td>11
+                                        <p class='case-numbers'>525704</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>12
+                                        <p class='case-numbers'>554849</p>
+                                    </td>
+                                    <td>13
+                                        <p class='case-numbers'>579005</p>
+                                    </td>
+                                    <td>14
+                                        <p class='case-numbers'>605390</p>
+                                    </td>
+                                    <td>15
+                                        <p class='case-numbers'>632548</p>
+                                    </td>
+                                    <td>16
+                                        <p class='case-numbers'>661712</p>
+                                    </td>
+                                    <td>17
+                                        <p class='case-numbers'>690714</p>
+                                    </td>
+                                    <td>18
+                                        <p class='case-numbers'>720630</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>19
+                                        <p class='case-numbers'>746625</p>
+                                    </td>
+                                    <td>20
+                                        <p class='case-numbers'>776093</p>
+                                    </td>
+                                    <td>21
+                                        <p class='case-numbers'>802583</p>
+                                    </td>
+                                    <td>22
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>23
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>24
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>25
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>26
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>27
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>28
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>29
+                                        <p class='case-numbers'>--</p>
+                                    </td>
+                                    <td>30
+                                        <p class='case-numbers'>--</p>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
+                        <p id='jan-total-diff'>Total increase from start to end of month: <br>7</p>
+                        <p id='feb-total-diff' style='display:none;'>Total increase from start to end of month: <br>16</p>
+                        <p id='mar-total-diff' style='display:none;'>Total increase from start to end of month: <br>186,071</p>
+                        <p id='apr-total-diff' style='display:none;'>Total increase from start to end of month: <br>--</p>
                     </center>
                 </div>
-                <div id='buttons-flex'>
-                    <div class='sub-flex-item'>
-                        <input type='radio' name='month-of-cases' value='jan' id='radio-jan'>
-                        <label for='radio-jan' onClick='checkButton()' id='radio-jan-label'>Jan</label>
-                    </div>
-                    <div class='sub-flex-item'>
-                        <input type='radio' name='month-of-cases' value='feb' id='radio-feb'>
-                        <label for='radio-feb' onClick='checkButton()' id='radio-feb-label'>Feb</label>
-                    </div>
-                    <div class='sub-flex-item'>
-                        <input type='radio' name='month-of-cases' value='mar' id='radio-mar'>
-                        <label for='radio-mar' onClick='checkButton()' id='radio-mar-label'>Mar</label>
-                    </div>
-                    <div class='sub-flex-item'>
-                        <input type='radio' name='month-of-cases' value='apr' id='radio-apr'>
-                        <label for='radio-apr' onClick='checkButton()' id='radio-apr-label'>Apr</label>
-                    </div>
+                <div id='cal-cntnr-sm'>
+                    <center>
+                        <table id='table-sm'>
+                            <thead>
+                                <tr style='background-color:#184B34;'>
+                                    <th>&nbsp;</th>
+                                    <th>Week 1</th>
+                                    <th>Week 2</th>
+                                    <th>Week 3</th>
+                                    <th>Week 4</th>
+                                    <th>Week 5</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <td style='background-color:#184B34; color:#5F7F7E;'>Jan</td>
+                                  <td>1-4<p class='case-numbers'>0</p></td>
+                                  <td>5-11<p class='case-numbers'>0</p></td>
+                                  <td>12-18<p class='case-numbers'>0</p></td>
+                                  <td>19-25<p class='case-numbers'>5</p></td>
+                                  <td>26-31<p class='case-numbers'>7</p></td>
+                                </tr>
+                                <tr>
+                                    <td style='background-color:#184B34; color:#5F7F7E;'>Feb</td>
+                                    <td>1<p class='case-numbers'>8</p></td>
+                                    <td>2-8<p class='case-numbers'>11</p></td>
+                                    <td>9-15<p class='case-numbers'>13</p></td>
+                                    <td>16-22<p class='case-numbers'>15</p></td>
+                                    <td>23-29<p class='case-numbers'>24</p></td>
+                                  </tr>
+                                  <tr>
+                                    <td style='background-color:#184B34; color:#5F7F7E;'>Mar</td>
+                                    <td>1-7<p class='case-numbers'>275</p></td>
+                                    <td>8-14<p class='case-numbers'>2234</p></td>
+                                    <td>15-21<p class='case-numbers'>24583</p></td>
+                                    <td>22-28<p class='case-numbers'>122653</p></td>
+                                    <td>29-31<p class='case-numbers'>186101</p></td>
+                                  </tr>
+                                  <tr>
+                                    <td style='background-color:#184B34; color:#5F7F7E;'>Apr</td>
+                                    <td>1-4<p class='case-numbers'>267436</p></td>
+                                    <td>5-11<p class='case-numbers'>525704</p></td>
+                                    <td>12-18<p class='case-numbers'>720630</p></td>
+                                    <td>19-25<p class='case-numbers'>0</p></td>
+                                    <td>26-30<p class='case-numbers'>0</p></td>
+                                  </tr>
+                            </tbody>
+                        </table>
+                    </center>
                 </div>
             </div>
         </div>
     </body>
     <footer>
+        Calendar data: <a href='https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/cases-in-us.html'>CDC</a>
+        <br>
         Coronavirus photo: <a href='https://unsplash.com/@fusion_medical_animation'>Fusion Medical Animation</a>
         <br>
-        Calendar data: <a href='https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/cases-in-us.html'>CDC</a>
+        Cold Jet changes gathered from HR
+        <br>
     </footer>
 </html>

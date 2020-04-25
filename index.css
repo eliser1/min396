@@ -11,7 +11,7 @@ footer {
     background-color:#184B34;
     padding:5px; 
     position:absolute;
-    width:100%; }
+    width:calc(100% - 10px); }
 
 a { color:#0C0C14; }
 
@@ -39,7 +39,7 @@ h3 { font-size:1.5em; }
 /* Content */
 #content-flex-cntnr { 
     display:flex; 
-    margin:10px; }
+    margin:5px 5px 2.5px 5px; }
 
 .flex-item {
     flex:1 1 33%; 
@@ -52,11 +52,12 @@ h3 { font-size:1.5em; }
 /* Radio Buttons */
 input[type='radio'] { display:none; }
 
-label { 
-    border:2px solid #184B34;
+.buttons-td { 
+    padding:10px; 
     color:#184B34;
     padding:10px;
-    margin:auto; }
+    margin:auto; 
+    width:100px; }
 
 label:hover { color:#5F7F7E; }
 
@@ -67,13 +68,39 @@ label:hover { color:#5F7F7E; }
 #buttons-flex { display:flex; margin:25px 0; }
 
 /* Calendar */
+#main-cal-cntnr { margin:2.5px 5px 5px 5px; display:flex; }
+
 table { text-align:center; }
 
-thead { background-color:#184B34; color: #5F7F7E; }
+thead { background-color:#184B34; color:#5F7F7E; }
 
 th { padding:5px; width:50px; }
 
+td { color:white; border:2px solid #184B34; padding-top:5px; }
+
+.case-numbers { margin:5px; font-size:0.75em; color:#5F7F7E; }
+
+#cal-cntnr { margin:10px; }
+
+#cal-cntnr-sm { display:none; margin:10px; }
+
+#table-desc-sm { display:none; }
+
 @media (max-width:900px)
 {
-    #content-flex-cntnr, .sub-flex-item { flex-direction:column; }
+    #content-flex-cntnr, #buttons-flex, #main-cal-cntnr { flex-direction:column; }
+
+    .buttons-td { width:75px; }
+}
+
+@media (max-width:600px)
+{
+    #cal-cntnr, #table-desc { display:none; }
+
+    #cal-cntnr-sm, #table-desc-sm { display:block; }
+}
+
+@media (max-width:400px)
+{
+    #table-sm { font-size:0.7em; }
 }
